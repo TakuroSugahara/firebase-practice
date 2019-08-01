@@ -27,12 +27,13 @@ jobs:
       # キャッシュのリストア処理。node_modulesを毎回installするのは重いので、キャッシュしとく
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}-{{ checksum "functions/package.json" }}
+            # - v1-dependencies-{{ checksum "package.json" }}-{{ checksum "functions/package.json" }}
+            - v1-dependencies-{{ checksum "functions/package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       
       # packageのインストール
-      - run: npm install
+      # - run: npm install
       # functionsのほうもnpm installする
       - run: cd functions && npm install
       # デプロイのときにfirebaseコマンドが使えるようにinstall
@@ -43,7 +44,8 @@ jobs:
           paths:
             - node_modules
             - functions/node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "functions/package.json" }}
+          # key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "functions/package.json" }}
+          key: v1-dependencies-{{ checksum "functions/package.json" }}
       
       # いざ、ビルド
       - run: npm run build
