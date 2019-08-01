@@ -56,6 +56,6 @@ jobs:
       
       # インストールしたfirebase-toolsは、node_modules/.bin/firebaseにあるので、それを使う
       # .firebasercにaliasを利用している場合は、firebase useする
-      - run: firebase use --project $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
+      # - run: firebase use --project $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
       - run: firebase deploy --only functions --project $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
 
