@@ -1,0 +1,12 @@
+version: '3'
+services:
+  firebase:
+    build: .
+    image: beautytree-firebase
+    container_name: beautytree-firebase
+    volumes:
+      - .:/app
+    ports:
+      - "9005:9005"
+      - "5000:5000"
+
