@@ -46,7 +46,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "functions/package.json" }}
       
       # いざ、ビルド
-      - run: npm run build
+      - run: cd functions && npm run build
       
       #####################################################
       ### DEPLOY
