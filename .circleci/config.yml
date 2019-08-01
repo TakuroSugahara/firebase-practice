@@ -12,11 +12,14 @@ jobs:
     working_directory: ~/repo
 
     # 環境変数の設定。WebUI上でも設定できるけど、YMLでもできる。
-    environment:
-      FIREBASE_PROJECT_ID: $FIREBASE_PROJECT_ID
-      FIREBASE_TOKEN: $FIREBASE_TOKEN
+    # environment:
+      # FIREBASE_PROJECT_ID: $FIREBASE_PROJECT_ID
+      # FIREBASE_TOKEN: $FIREBASE_TOKEN
 
     # ここからが処理の始まり
+    script:
+      - echo $FIREBASE_PROJECT_ID
+      - echo $FIREBASE_TOKEN
     steps:
       # リポジトリをチェックアウトする
       - checkout
@@ -56,6 +59,6 @@ jobs:
       
       # インストールしたfirebase-toolsは、node_modules/.bin/firebaseにあるので、それを使う
       # .firebasercにaliasを利用している場合は、firebase useする
-      # - run: firebase use --project $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
+      - run: firebase use --project $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
       - run: firebase deploy --only functions --project $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
 
