@@ -37,7 +37,7 @@ jobs:
       # functionsのほうもnpm installする
       - run: cd functions && npm install
       # デプロイのときにfirebaseコマンドが使えるようにinstall
-      - run: npm install -g firebase-tools
+      - run: sudo npm install -g firebase-tools
 
       # キャッシュの保存処理。funstionsにもあるので、pathsに両方記載する
       - save_cache:
