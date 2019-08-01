@@ -34,7 +34,7 @@ jobs:
       # packageのインストール
       - run: npm install
       # functionsのほうもnpm installする
-      - run: cd funcsions && npm install
+      - run: cd functions && npm install
       # デプロイのときにfirebaseコマンドが使えるようにinstall
       - run: npm install -D firebase-tools
 
