@@ -37,7 +37,7 @@ jobs:
       # functionsのほうもnpm installする
       - run: cd functions && npm install
       # デプロイのときにfirebaseコマンドが使えるようにinstall
-      - run: npm install -D firebase-tools
+      - run: npm install -g firebase-tools
 
       # キャッシュの保存処理。funstionsにもあるので、pathsに両方記載する
       - save_cache:
@@ -56,6 +56,6 @@ jobs:
       
       # インストールしたfirebase-toolsは、node_modules/.bin/firebaseにあるので、それを使う
       # .firebasercにaliasを利用している場合は、firebase useする
-      - run: firebase use release --project "$FIREBASE_PROJECT_ID" --token "$FIREBASE_TOKEN"
+      - run: firebase use --project "$FIREBASE_PROJECT_ID" --token "$FIREBASE_TOKEN"
       - run: firebase deploy --only functions --project "$FIREBASE_PROJECT_ID" --token "$FIREBASE_TOKEN"
 
