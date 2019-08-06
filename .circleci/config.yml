@@ -11,15 +11,7 @@ jobs:
 
     working_directory: ~/repo
 
-    # 環境変数の設定。WebUI上でも設定できるけど、YMLでもできる。
-    # environment:
-      # FIREBASE_PROJECT_ID: $FIREBASE_PROJECT_ID
-      # FIREBASE_TOKEN: $FIREBASE_TOKEN
-
     # ここからが処理の始まり
-    script:
-      - echo $FIREBASE_PROJECT_ID
-      - echo $FIREBASE_TOKEN
     steps:
       # リポジトリをチェックアウトする
       - checkout
