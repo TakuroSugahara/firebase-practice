@@ -53,7 +53,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">
+          <v-btn color="primary" nuxt to="/login">
             Continue
           </v-btn>
         </v-card-actions>
