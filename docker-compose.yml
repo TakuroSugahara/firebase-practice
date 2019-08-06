@@ -2,8 +2,8 @@ version: '3'
 services:
   firebase:
     build: .
-    image: beautytree-firebase
-    container_name: beautytree-firebase
+    image: firebase-sample
+    container_name: firebase-sample
     volumes:
       - .:/app
     ports:
